@@ -27,10 +27,10 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
   && curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer \
   && apt-get update && apt-get install -y zlib1g-dev zip git \
   && composer global require "sebastian/phpcpd=*" \
-  && composer global require "squizlabs/php_codesniffer=2.5.*" \
+  && composer global require "squizlabs/php_codesniffer=*" \
   && git clone git://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git /usr/share/php/PHP/CodeSniffer/Standards/WordPress \
-  && composer global require "phpmd/phpmd=2.1.*" \
-  && composer global require "mayflower/php-codebrowser=~1.1" \
+  && composer global require "phpmd/phpmd=*" \
+  && composer global require "mayflower/php-codebrowser=*" \
   && /root/.composer/vendor/bin/phpcs --config-set installed_paths /usr/share/php/PHP/CodeSniffer/Standards/WordPress
 
 RUN npm install gulp -g
